@@ -1,0 +1,209 @@
+html,
+body {
+    background-color: var(--light);
+    margin: 0 0;
+    padding: 0 0;
+    /* width: 100vw; forms a scroll-bar, unecessary, */
+    height: 100vh;
+    height: var(--app-height);
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 
+==========================
+DECALRING GLOBAL VARIABLES 
+==========================
+*/
+
+/* to learn more -> 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+:root {
+    --app-height: 100%;
+
+    /* Main App Colors, */
+    --primary: #F5620F;
+    --secondary: #1B1B1B;
+    --light: #FFFFFF;
+    --tertiary: #00FFD1;
+
+    /* Dark Theme, */
+    --dark: #292929;
+    --background-surface: #121212;
+}
+
+
+/* 
+==========================
+Set Global Fonts for Website,
+==========================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Headings Global Reference,
+~~~~~~~~~~~~~~~~~~~~~~~~~
+h1 -> 2em/32 px
+h2 -> 1.5em/24 px
+h3 -> 1.17em/18.72 px
+h4 -> 1em/16 px
+h5 -> .83em/13.28 px
+h6 -> .67em/10.72 px
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+	line-height: 150%;
+    transition: all 0.5s ease;
+    color: var(--dark);
+    margin: 0;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	/* font-size: 14px; */
+	line-height: 150%;
+    margin: 0;
+    color: var(--dark);
+} p.large {
+	font-size: calc(100vw / 23.4375);
+} p.medium {
+	font-size: calc(100vw / 26.7857142857);
+} p.small { 
+	font-size: calc(100vw / 31.25);
+}
+
+/*
+=============================
+TABLET (& UP), 
+100vw - calaulated from 768px */
+@media only screen and (min-width: 768px) {
+	p.large {
+		font-size: calc(100vw / 48);
+	} 
+	p.medium {
+		font-size: calc(100vw / 54.8571428571);
+	} 
+	p.small {
+		font-size: calc(100vw / 64);
+	}
+}
+
+/*
+=============================
+DESKTOP (& UP), 
+100vw - calaulated from 1024px */
+@media only screen and (min-width: 1024px) {
+	p.large {
+		font-size: calc(100vw / 90);
+	} 
+	p.medium {
+		font-size: calc(100vw / 102.857142857);
+	} 
+	p.small {
+		font-size: calc(100vw / 120);
+	}
+}
+
+/* 
+==========================
+BUTTON STYLES 
+==========================
+*/
+button {
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+	/* Auto Layout */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 11px 24px 12px;
+	/* width: 303px; */
+	/* height: 44px; */
+	box-shadow: 0px 3px 8px rgba(212, 84, 12, 0.32);
+	border-radius: 8px;
+} 
+/* 
+~~~~~~~~~~~~~~~~~~~~
+PRIMARY BTN */
+.btn-primary {
+	background-color: var(--primary) !important;
+} .btn-primary p {
+    color: var(--light) !important;
+}
+
+/* 
+==========================
+INPUT STYLES 
+==========================
+*/
+
+input {
+    width: 100%;
+    border-radius: 5px;
+    border: 0;
+    font-size: 20px;
+    outline: none;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* 
+===================
+CONTAINER DIVs
+===================
+*/
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+}
+
+.row {
+	display: flex;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: space-between;
+	align-items: center;
+}
+/*
+=============================
+TABLET (& UP), 
+100vw - calaulated from 768px */
+@media only screen and (min-width: 767px) {
+	.row {
+		justify-content: unset;
+	}
+}
+
+.column {
+	display: grid;
+    align-content: center;
+    align-items: center;
+}
