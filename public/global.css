@@ -23,16 +23,21 @@ DECALRING GLOBAL VARIABLES
 https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
 :root {
     --app-height: 100%;
-
-    /* Main App Colors, */
+    /* 
+    Main App Colors, */
     --primary: #F5620F;
     --secondary: #1B1B1B;
     --light: #FFFFFF;
     --tertiary: #00FFD1;
-
-    /* Dark Theme, */
+    /* 
+    Dark Theme, */
     --dark: #292929;
     --background-surface: #121212;
+    /* 
+    breakpoints */
+    --mobile: 375;
+    --tablet: 767;
+    --destop: 1440;
 }
 
 
