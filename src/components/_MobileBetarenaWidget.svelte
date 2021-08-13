@@ -121,7 +121,7 @@
     onMount (async() => {
         setTimeout(() => {
             show = true
-        }, 3500);
+        }, 2000);
     });
 
     /**
