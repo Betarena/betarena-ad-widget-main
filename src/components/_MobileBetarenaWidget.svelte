@@ -88,8 +88,12 @@ MOBILE FIRST -->
     widget-container-style
     */
     #ad_widget_betarena {
-        width: calc(100vw / 1.09329446064);
-        height: calc(100vw / 0.95663265306);
+        /* width: calc(100vw / 1.09329446064); */
+        /* height: calc(100vw / 0.95663265306); */
+        width: 100%;
+        height: 100%;
+        max-width: 343px;
+        max-height: 392px;
         /* 
         constant-properties */
         display: grid;
@@ -100,9 +104,11 @@ MOBILE FIRST -->
         margin: auto;
     }
     #ad_widget_betarena img#booker-logo {
-        width: inherit;
-        height: calc(100vw / 3.98936170213);
+        /* width: inherit; */
+        /* height: calc(100vw / 3.98936170213); */
         object-fit: cover;
+        width: 343px;
+        height: 94px;
     }
     #ad_widget_betarena-loading {
         width: calc(100vw / 1.09329446064);
@@ -120,7 +126,8 @@ MOBILE FIRST -->
     further-quick-info
     */
     #further-quick-info {
-        padding: calc(100vw / 18.75);
+        /* padding: calc(100vw / 18.75); */
+        padding: 24px 20px;
     }
     .info-box {
         display: grid;
@@ -128,24 +135,31 @@ MOBILE FIRST -->
         justify-content: space-evenly;
         justify-items: start;
         align-content: stretch;
-        height: calc(100vw / 8.33333333333);
+        /* height: calc(100vw / 8.33333333333); */
+        height: 45px;
     }
     img.device-support {
-        width: calc(100vw / 24.7851949769);
+        /* width: calc(100vw / 24.7851949769); */
+        /* margin-right: calc(100vw / 44.6960667461); */
         height: auto;
-        margin-right: calc(100vw / 44.6960667461);
+        margin-right: 8.39px;
+        width: 15.13px;
+        /* height: 17.89px; */
     }
     img.checkmark {
-        width: calc(100vw / 22.0458553792);
         height: auto;
-        margin: 0 calc(100vw / 39.3907563025) 0 0;
+        /* width: calc(100vw / 22.0458553792); */
+        /* margin: 0 calc(100vw / 39.3907563025) 0 0; */
+        width: 17.01px;
+        margin: 0 9.52px 0 0;
     }
     /*
     ~~~~~~~~~~~~~~~~~~~~
     promotion-CTA-box
     */
     #promotion-info-box {
-        padding: calc(100vw / 18.75);
+        /* padding: calc(100vw / 18.75); */
+        padding: 20px;
         /* 
         constant-properties */
         background: #FFFFFF;
@@ -185,7 +199,7 @@ MOBILE FIRST -->
             <div id='further-quick-info'>
                 <!-- 
                 further-analytics-info -->
-                <div class='row' style='margin-bottom: calc(100vw / 18.75); height: calc(100vw / 8.33333333333);'>
+                <div class='row' style='margin-bottom: 21px; height: 45px;'>
                     <div class='info-box'>
                         <p class='large' style='color: var(--primary);'>{ data.avg_payout } %</p>
                         <p class='medium'>{data.lang.avg_payout}</p>

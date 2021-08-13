@@ -85,11 +85,14 @@ p {
     margin: 0;
     color: var(--dark);
 } p.large {
-	font-size: calc(100vw / 23.4375);
+	/* font-size: calc(100vw / 23.4375); */
+    font-size: 16px;
 } p.medium {
-	font-size: calc(100vw / 26.7857142857);
+	/* font-size: calc(100vw / 26.7857142857); */
+    font-size: 14px;
 } p.small { 
-	font-size: calc(100vw / 31.25);
+	/* font-size: calc(100vw / 31.25); */
+    font-size: 12px;
 }
 
 /*
@@ -98,13 +101,16 @@ TABLET (& UP),
 100vw - calaulated from 768px */
 @media only screen and (min-width: 768px) {
 	p.large {
-		font-size: calc(100vw / 48);
+		/* font-size: calc(100vw / 48); */
+        font-size: 16px;
 	} 
 	p.medium {
-		font-size: calc(100vw / 54.8571428571);
+		/* font-size: calc(100vw / 54.8571428571); */
+        font-size: 14px;
 	} 
 	p.small {
-		font-size: calc(100vw / 64);
+		/* font-size: calc(100vw / 64); */
+        font-size: 12px;
 	}
 }
 
@@ -114,13 +120,16 @@ DESKTOP (& UP),
 100vw - calaulated from 1024px */
 @media only screen and (min-width: 1024px) {
 	p.large {
-		font-size: calc(100vw / 90);
+		/* font-size: calc(100vw / 90); */
+        font-size: 16px;
 	} 
 	p.medium {
-		font-size: calc(100vw / 102.857142857);
+		/* font-size: calc(100vw / 102.857142857); */
+        font-size: 14px;
 	} 
 	p.small {
-		font-size: calc(100vw / 120);
+		/* font-size: calc(100vw / 120); */
+        font-size: 12px;
 	}
 }
 
