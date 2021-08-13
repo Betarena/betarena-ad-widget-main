@@ -144,12 +144,8 @@ TABLED & DESKTOP FIRST -->
     widget-container-style
     */
     #ad_widget_betarena {
-        /* width: calc(100vw / 1.09714285714); */
-        /* height: calc(100vw / 3.91836734694); */
-        width: 100%;
-        height: 100%;
-        max-width: 700px;
-        max-height: 196px;
+        width: 700px;
+        height: 196px;
         /* 
         constant-properties */
         display: flex;
@@ -254,9 +250,9 @@ TABLED & DESKTOP FIRST -->
         widget-container-style
         */
         #ad_widget_betarena {
-            max-width: 792px;
+            width: 792px;
             /* width: calc(100vw / 1.81818181818); */
-            max-height: 196px;
+            height: 196px;
             /* height: calc(100vw / 7.34693877551); */
         }
         #ad_widget_betarena img#booker-logo {

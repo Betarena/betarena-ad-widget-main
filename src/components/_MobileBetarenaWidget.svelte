@@ -47,8 +47,10 @@
             ...db_real_data,
             lang: db_real_data_translation
         }
-        // console.info('final-response', finalLanguageResponse)
-        
+        // let intercept the image URL;
+        let imgURL = finalLanguageResponse.logo
+        getImageBgColor(imgURL)
+        // return the Promise Value
         return finalLanguageResponse
     }
     let promise = widgetInit()
@@ -164,8 +166,8 @@ MOBILE FIRST -->
         height: 94px;
     }
     #ad_widget_betarena-loading {
-        width: calc(100vw / 1.09329446064);
-        height: calc(100vw / 0.95663265306);
+        width: 343px;
+        height: 392px;
         /* 
         constant-properties */
         background: #FFFFFF;
