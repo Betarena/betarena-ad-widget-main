@@ -15,13 +15,22 @@
         LanguageParam,
         LanguageTranslation,
         FinalLanguageResponse
-    } from "../models/firebase-real-db-interface"; 
+    } from "../models/firebase-real-db-interface"
+
+    import type {
+        ContentLoaderProps
+    } from '../models/content-loader-interface'
+
+    import { onMount } from 'svelte';
+
+    import ContentLoader from 'svelte-content-loader';
 
     import ColorThief from 'colorthief'
 
     /**
-     * Function / METHOD
-     * ~~~~~~~~~~~~~~~~~~
+     * Function / Method
+     * ~~~~~~~~~~~~~~~~~~~
+     * Description:
      * Intializer of the Widget Function
      * 
      * Returns INTERFACE - `LanguageParam`
@@ -97,6 +106,33 @@
         return hex.length === 1 ? '0' + hex : hex
     }).join('')
 
+    /**
+     *  Function / Method;
+     * ~~~~~~~~~~~~~~~~~~~
+     * Description:
+     * Deliberately delays the display of the
+     * widget component for the users to show the
+     * PlaceHolder loading;
+     * 
+     * REMOVE THIS FOR PRODUCTION; 
+     * AS IT DELAYS ACCESS TO THE WEBSITE;
+    */
+    let show: boolean = false
+    onMount (async() => {
+        setTimeout(() => {
+            show = true
+        }, 3500);
+    });
+
+    /**
+     * Decalring the ContentLoaderProps
+     * values through the interface 
+    */
+    let contentLoaderProps: ContentLoaderProps = {
+        width: `100%`,
+        height: `100%`,
+        primaryColor: '#f9f9f9'
+    }
 </script>
 
 <!-- 
@@ -108,8 +144,10 @@ TABLED & DESKTOP FIRST -->
     widget-container-style
     */
     #ad_widget_betarena {
-        width: calc(100vw / 1.09714285714);
-        height: calc(100vw / 3.91836734694);
+        /* width: calc(100vw / 1.09714285714); */
+        /* height: calc(100vw / 3.91836734694); */
+        max-width: 700px;
+        max-height: 196px;
         /* 
         constant-properties */
         display: flex;
@@ -120,10 +158,10 @@ TABLED & DESKTOP FIRST -->
         margin: auto;
     }
     #ad_widget_betarena img#booker-logo {
-        width: calc(100vw / 5.48571428571);
-        height: calc(100vw / 3.91836734694);
         object-fit: contain;
         background-color: var(--logo-bookmaker-bg);
+        width: 140px;
+        object-fit: cover;
     }
     /* 
     ~~~~~~~~~~~~~~~~~~~~
@@ -131,15 +169,18 @@ TABLED & DESKTOP FIRST -->
     */
     #desktop-container {
         display: grid;
-        width: calc(100vw / 1.37142857143);
+        /* width: calc(100vw / 1.37142857143); */
+        width: 560px;
     }
     /*
     ~~~~~~~~~~~~~~~~~~~~
     further-quick-info
     */
     #further-quick-info {
-        height: calc(100vw / 9.14285714286);
-        padding: calc(100vw / 38.4);
+        /* height: calc(100vw / 9.14285714286); */
+        /* padding: calc(100vw / 38.4); */
+        height: 84px;
+        padding: 20px;
         display: flex;
         justify-content: space-between;
         align-content: center;
@@ -152,33 +193,42 @@ TABLED & DESKTOP FIRST -->
         justify-content: space-evenly;
         justify-items: start;
         align-content: stretch;
-        height: calc(100vw / 17.4545454545);
-        margin-right: calc(100vw / 24);
+        /* height: calc(100vw / 17.4545454545); */
+        /* margin-right: calc(100vw / 24); */
+        height: 44px;
+        margin-right: 32px;
     } .info-box:not(:first-child) {
-        padding-left: calc(100vw / 48);
+        /* padding-left: calc(100vw / 48); */
+        padding-left: 16px;
         border-left: 1px solid #E6E6E6;
     }
     img.device-support {
-        width: calc(100vw / 50.7600793126);
+        /* width: calc(100vw / 50.7600793126); */
+        /* margin-right: calc(100vw / 91.5375446961); */
         height: auto;
-        margin-right: calc(100vw / 91.5375446961);
+        width: 15.13px;
+        margin-right: 8.39px;
     }
     .check-box {
-        margin-bottom: calc(100vw / 88.9918887601);
+        /* margin-bottom: calc(100vw / 88.9918887601); */
+        margin-bottom: 8.67px;
     } .check-box:last-child {
         margin-bottom: 0;
     }
     img.checkmark {
-        width: calc(100vw / 45.1499118166);
+        /* width: calc(100vw / 45.1499118166); */
+        /* margin: 0 calc(100vw / 80.6722689076) 0 0; */
         height: auto;
-        margin: 0 calc(100vw / 80.6722689076) 0 0;
+        width: 17.01px;
+        margin: 0 9.52px 0 0;
     }
     /*
     ~~~~~~~~~~~~~~~~~~~~
     promotion-CTA-box
     */
     #promotion-info-box {
-        padding: calc(100vw / 38.4);
+        /* padding: calc(100vw / 38.4); */
+        padding: 21.34px;
         background: #FFFFFF;
         box-shadow: inset 0px 1px 0px #ebebeb;
         display: flex;
@@ -203,60 +253,77 @@ TABLED & DESKTOP FIRST -->
         widget-container-style
         */
         #ad_widget_betarena {
-            width: calc(100vw / 1.81818181818);
-            height: calc(100vw / 7.34693877551);
+            max-width: 792px;
+            /* width: calc(100vw / 1.81818181818); */
+            max-height: 196px;
+            /* height: calc(100vw / 7.34693877551); */
         }
         #ad_widget_betarena img#booker-logo {
-            width: calc(100vw / 10.2857142857);
-            height: inherit;
+            /* width: calc(100vw / 10.2857142857);
+            height: inherit; */
             object-fit: cover;
+            width: 140px;
         }
         /* 
         ~~~~~~~~~~~~~~~~~~~~
         tabler-desktop-specific 
         */
         #desktop-container {
-            width: calc(100vw / 2.20858895706);
+            /* width: calc(100vw / 2.20858895706); */
+            width: 652px;
         }
         /*
         ~~~~~~~~~~~~~~~~~~~~
         further-quick-info
         */
         #further-quick-info {
-            height: calc(100vw / 17.1428571429);
-            padding: calc(100vw / 72);
+            /* height: calc(100vw / 17.1428571429); */
+            /* padding: calc(100vw / 72); */
+            height: 84px;
+            padding: 20px;
         }
         .info-box {
-            height: calc(100vw / 32.7272727273);
-            margin-right: calc(100vw / 45);
+            /* height: calc(100vw / 32.7272727273); */
+            /* margin-right: calc(100vw / 45); */
+            height: 44px;
+            margin-right: 32px;
         } .info-box:not(:first-child) {
-            padding-left: calc(100vw / 90);
+            /* padding-left: calc(100vw / 90); */
+            padding-left: 16px;
             border-left: 1px solid #E6E6E6;
         }
         img.device-support {
-            width: calc(100vw / 95.1751487112);
+            /* width: calc(100vw / 95.1751487112); */
+            /* margin-right: calc(100vw / 171.632896305); */
             height: auto;
-            margin-right: calc(100vw / 171.632896305);
+            width: 15.13px;
+            margin-right: 8.39px;
         }
         .check-box {
-            margin-bottom: calc(100vw / 166.666666667);
+            /* margin-bottom: calc(100vw / 166.666666667); */
+            margin-bottom: 8.64px;
         } .check-box:last-child {
             margin-bottom: 0;
         }
         img.checkmark {
-            width: calc(100vw / 84.6560846561);
+            /* width: calc(100vw / 84.6560846561); */
+            /* margin: 0 calc(100vw / 151.260504202) 0 0; */
             height: auto;
-            margin: 0 calc(100vw / 151.260504202) 0 0;
+            width: 17.01px;
+            margin-right: 9.52px;
         }
         /*
         ~~~~~~~~~~~~~~~~~~~~
         promotion-CTA-box
         */
         #promotion-info-box {
-            padding: calc(100vw / 72);
+            /* padding: calc(100vw / 72); */
+            padding: 21.35px;
         }
     }
 </style>
+
+<!-- calc(100vw / (var(--mobile) / 6.2)); -->
 
 <!-- 
 ~~~~~~~~~~~~
@@ -265,50 +332,109 @@ TABLED & DESKTOP FIRST -->
 -->
 
 {#await promise}
-    <p>... Loading Widget ...</p>
+    <div id='ad_widget_betarena'>
+        <ContentLoader {...contentLoaderProps} />
+    </div>
     
 {:then data}
-    <div id='ad_widget_betarena'>
-        <!--
-        matchbetting-logo -->
-        <img
-            src={data.logo}
-            alt=""
-            id='booker-logo'
-        />
-        <div id='desktop-container'>
-            <!-- 
-            further-info -->
-            <div id='further-quick-info'>
+    <!-- 
+    simple further buffer to see the content loader-transition -->
+    {#if !show}
+        <div id='ad_widget_betarena'>
+            <ContentLoader {...contentLoaderProps} />
+        </div>
+        <div id='ad_widget_betarena'>
+            <!--
+            matchbetting-logo -->
+            <img 
+                src={data.logo}
+                alt=""
+                id='booker-logo'
+            />
+            <div id='desktop-container'>
                 <!-- 
-                further-analytics-info -->
-                <div class='row'>
-                    <div class='info-box'>
-                        <p class='large' style='color: var(--primary);'>{data.avg_payout} %</p>
-                        <p class='medium'>{data.lang.avg_payout}</p>
-                    </div>
-                    <div class='info-box'>
-                        <p class='large' style='color: #68D77A'>{data.payout_speed}</p>
-                        <p class='medium'>{data.lang.payout_speed}</p>
-                    </div>
-                    {#if data.apps_support}
+                further-info -->
+                <div id='further-quick-info'>
+                    <!-- 
+                    further-analytics-info -->
+                    <div class='row'>
                         <div class='info-box'>
-                            <div class='row'>
-                                <img 
-                                src='./static/BetArena - Working/icon/android.svg'
-                                alt=''
-                                    class='device-support'
-                                />
-                                <img 
-                                    src='./static/BetArena - Working/icon/apple.svg'
+                            <p class='large' style='color: var(--primary);'>{data.avg_payout} %</p>
+                            <p class='medium'>{data.lang.avg_payout}</p>
+                        </div>
+                        <div class='info-box'>
+                            <p class='large' style='color: #68D77A'>{data.payout_speed}</p>
+                            <p class='medium'>{data.lang.payout_speed}</p>
+                        </div>
+                        {#if data.apps_support}
+                            <div class='info-box'>
+                                <div class='row'>
+                                    <img 
+                                    src='./static/BetArena - Working/icon/android.svg'
                                     alt=''
-                                    class='device-support'
-                                />
-                                <img 
-                                    src='./static/BetArena - Working/icon/chrome-colored.svg'
+                                        class='device-support'
+                                    />
+                                    <img 
+                                        src='./static/BetArena - Working/icon/apple.svg'
+                                        alt=''
+                                        class='device-support'
+                                    />
+                                    <img 
+                                        src='./static/BetArena - Working/icon/chrome-colored.svg'
+                                        alt=''
+                                        class='device-support'
+                                    />
+                                </div>
+                                <p class='medium'>{data.lang.apps_support}</p>
+                            </div>
+                        {/if}
+                    </div>
+                    <!-- 
+                    CTA-read-more -->
+                    <a href="/">
+                        <p class='small' style='color: var(--primary); font-weight: 500;'>
+                            { data.lang.read_full_review } >
+                        </p>
+                    </a>
+                </div>
+                <!-- 
+                promotion-info-container -->
+                <div id='promotion-info-box'>
+                    <!-- 
+                    validation-row-further-info -->
+                    <div class='column' style='margin-right: calc(100vw / 12.5901639344);'>
+                        {#if data.cashout}
+                            <div class='row check-box'>
+                                <img
+                                    src='./static/BetArena - Working/icon/􀁣.svg'
                                     alt=''
-                                    class='device-support'
+                                    class='checkmark'
                                 />
+                                <p class='small' style='white-space: nowrap;'>{ data.lang.cashout }</p>
+                            </div>
+                        {:else}
+                            <div/>
+                        {/if}
+                        {#if data.live_stream}
+                            <div class='row check-box'>
+                                <img
+                                    src='./static/BetArena - Working/icon/􀁣.svg'
+                                    alt=''
+                                    class='checkmark'
+                                />
+                                <p class='small' style='white-space: nowrap;'>{ data.lang.live_stream }</p>
+                            </div>
+                        {:else}
+                            <div/>
+                        {/if}
+                        {#if data.bet_builder}
+                            <div class='row check-box'>
+                                <img
+                                    src='./static/BetArena - Working/icon/􀁣.svg'
+                                    alt=''
+                                    class='checkmark'
+                                />
+                                <p class='small' style='white-space: nowrap;'>{ data.lang.bet_builder }</p>
                             </div>
                             <p class='medium'>{data.lang.apps_support}</p>
                         </div>
@@ -368,19 +494,24 @@ TABLED & DESKTOP FIRST -->
                 <!-- 
                 disclaimer-info-&-button -->
                 <div class='row'>
-                    <p class='small' style='margin-right: calc(100vw / 48); text-align: end;'>
+                    <p class='small' style='margin-right: 16px; text-align: end;'>
                         { data.lang.disclaimer }
                     </p>
                     <button class='btn-primary'>
                         <p class='medium' style='white-space: nowrap;'>
                             Get 500$ bonus
                         </p>
-                    </button>
+                        <button class='btn-primary'>
+                            <p class='medium' style='white-space: nowrap;'>
+                                Get 500$ bonus
+                            </p>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
+    {/if}
+
 {:catch error}
     <p style="color: red">{error.message}</p>
 {/await}
