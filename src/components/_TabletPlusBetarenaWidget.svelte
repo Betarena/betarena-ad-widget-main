@@ -146,6 +146,8 @@ TABLED & DESKTOP FIRST -->
     #ad_widget_betarena {
         /* width: calc(100vw / 1.09714285714); */
         /* height: calc(100vw / 3.91836734694); */
+        width: 100%;
+        height: 100%;
         max-width: 700px;
         max-height: 196px;
         /* 
@@ -161,7 +163,6 @@ TABLED & DESKTOP FIRST -->
         object-fit: contain;
         background-color: var(--logo-bookmaker-bg);
         width: 140px;
-        object-fit: cover;
     }
     /* 
     ~~~~~~~~~~~~~~~~~~~~
@@ -261,7 +262,7 @@ TABLED & DESKTOP FIRST -->
         #ad_widget_betarena img#booker-logo {
             /* width: calc(100vw / 10.2857142857);
             height: inherit; */
-            object-fit: cover;
+            object-fit: contain;
             width: 140px;
         }
         /* 
@@ -343,6 +344,7 @@ TABLED & DESKTOP FIRST -->
         <div id='ad_widget_betarena'>
             <ContentLoader {...contentLoaderProps} />
         </div>
+    {:else}
         <div id='ad_widget_betarena'>
             <!--
             matchbetting-logo -->
@@ -436,70 +438,15 @@ TABLED & DESKTOP FIRST -->
                                 />
                                 <p class='small' style='white-space: nowrap;'>{ data.lang.bet_builder }</p>
                             </div>
-                            <p class='medium'>{data.lang.apps_support}</p>
-                        </div>
-                    {/if}
-                </div>
-                <!-- 
-                CTA-read-more -->
-                <a href="/">
-                    <p class='small' style='color: var(--primary); font-weight: 500;'>
-                        { data.lang.read_full_review } >
-                    </p>
-                </a>
-            </div>
-            <!-- 
-            promotion-info-container -->
-            <div id='promotion-info-box'>
-                <!-- 
-                validation-row-further-info -->
-                <div class='column' style='margin-right: calc(100vw / 12.5901639344);'>
-                    {#if data.cashout}
-                        <div class='row check-box'>
-                            <img
-                                src='./static/BetArena - Working/icon/􀁣.svg'
-                                alt=''
-                                class='checkmark'
-                            />
-                            <p class='small' style='white-space: nowrap;'>{ data.lang.cashout }</p>
-                        </div>
-                    {:else}
-                        <div/>
-                    {/if}
-                    {#if data.live_stream}
-                        <div class='row check-box'>
-                            <img
-                                src='./static/BetArena - Working/icon/􀁣.svg'
-                                alt=''
-                                class='checkmark'
-                            />
-                            <p class='small' style='white-space: nowrap;'>{ data.lang.live_stream }</p>
-                        </div>
-                    {:else}
-                        <div/>
-                    {/if}
-                    {#if data.bet_builder}
-                        <div class='row check-box'>
-                            <img
-                                src='./static/BetArena - Working/icon/􀁣.svg'
-                                alt=''
-                                class='checkmark'
-                            />
-                            <p class='small' style='white-space: nowrap;'>{ data.lang.bet_builder }</p>
-                        </div>
-                    {:else}
-                        <div/>
-                    {/if}
-                </div>
-                <!-- 
-                disclaimer-info-&-button -->
-                <div class='row'>
-                    <p class='small' style='margin-right: 16px; text-align: end;'>
-                        { data.lang.disclaimer }
-                    </p>
-                    <button class='btn-primary'>
-                        <p class='medium' style='white-space: nowrap;'>
-                            Get 500$ bonus
+                        {:else}
+                            <div/>
+                        {/if}
+                    </div>
+                    <!-- 
+                    disclaimer-info-&-button -->
+                    <div class='row'>
+                        <p class='small' style='margin-right: 16px; text-align: end;'>
+                            { data.lang.disclaimer }
                         </p>
                         <button class='btn-primary'>
                             <p class='medium' style='white-space: nowrap;'>
