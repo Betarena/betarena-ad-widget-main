@@ -57,9 +57,6 @@
 		left: 0;
 		width: fit-content;
 	}
-	h1 {
-		margin-bottom: calc(100vw / 31.25);
-	}
 </style>
 
 
@@ -73,14 +70,12 @@
 {#if !viewportDesktop}
     <div id='mobile-version'>
 		<div id='inner-container'>
-			<h1>Best Betting Site</h1>
 			<Mobile_BetarenaWidget />
 		</div>
     </div>
 {:else}
     <div id='desktop-version'>
 		<div id='inner-container'>
-			<h1>Best Betting Site</h1>
 			<TabletPlus_BetarenaWidget />
 		</div>
     </div>
