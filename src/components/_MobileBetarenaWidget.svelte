@@ -15,7 +15,9 @@
         LanguageParam,
         LanguageTranslation,
         FinalLanguageResponse
-    } from "../models/firebase-real-db-interface"; 
+    } from '../models/firebase-real-db-interface'
+
+    import ColorThief from 'colorthief'
 
     /**
      * Function / Method
@@ -40,9 +42,58 @@
         
         return finalLanguageResponse
     }
-
-
     let promise = widgetInit()
+
+    // declaring a new instance of `ColorThief`;
+    const colorThief = new ColorThief();
+
+    /**
+     * Function / METHOD
+     * ~~~~~~~~~~~~~~~~~~
+     * Description:
+     * A function-method to obtain the main
+     * `primary` color of the image
+     * and place it on the background
+     * container to keep the image the same size
+     * 
+     * @param imgURL
+    */
+    function getImageBgColor(imgURL: string) {
+        // instantiate the image Type;
+        const img = new Image();
+        // listen, event to wait for the image to load
+        img.addEventListener('load', function() {
+            // get the array of RGB values,
+            let colorValues = colorThief.getColor(img)
+            // convert the RGB values to HEX value,
+            let hexColor = rgbToHex(colorValues[0], colorValues[1], colorValues[2])
+            // pass this values as a `CSS :root` variable, accessible to all the website,
+            const doc = document.documentElement
+			doc.style.setProperty('--logo-bookmaker-bg', `${hexColor}`)
+        });
+        // declaring the image paramaters & CORS by-pass
+        let imageURL = imgURL;
+        let googleProxyURL = 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=';
+        img.crossOrigin = 'Anonymous';
+        img.src = googleProxyURL + encodeURIComponent(imageURL);
+    }
+
+    /**
+     * Function / METHOD;
+     * ~~~~~~~~~~~~~~~~~~
+     * Description:
+     * A function-method to convert the
+     * [x,a,c] of RBG values to `#HEX` values
+     * 
+     * @param r
+     * @param g
+     * @param b
+     * @returns (# a singel #HEX-Color Value)
+    */
+    const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
+        const hex = x.toString(16)
+        return hex.length === 1 ? '0' + hex : hex
+    }).join('')
 </script>
 
 <!-- 
@@ -68,7 +119,8 @@ MOBILE FIRST -->
     #ad_widget_betarena img#booker-logo {
         width: inherit;
         height: calc(100vw / 3.98936170213);
-        object-fit: cover;
+        object-fit: contain;
+        background-color: var(--logo-bookmaker-bg);
     }
     /*
     ~~~~~~~~~~~~~~~~~~~~
