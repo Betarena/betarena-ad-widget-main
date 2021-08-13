@@ -54,8 +54,10 @@ TABLED & DESKTOP FIRST -->
     widget-container-style
     */
     #ad_widget_betarena {
-        width: calc(100vw / 1.09714285714);
-        height: calc(100vw / 3.91836734694);
+        /* width: calc(100vw / 1.09714285714); */
+        /* height: calc(100vw / 3.91836734694); */
+        max-width: 700px;
+        max-height: 196px;
         /* 
         constant-properties */
         display: flex;
@@ -66,8 +68,9 @@ TABLED & DESKTOP FIRST -->
         margin: auto;
     }
     #ad_widget_betarena img#booker-logo {
-        width: calc(100vw / 5.48571428571);
-        height: inherit;
+        /* width: calc(100vw / 5.48571428571); */
+        /* height: inherit; */
+        width: 140px;
         object-fit: cover;
     }
     /* 
@@ -76,15 +79,18 @@ TABLED & DESKTOP FIRST -->
     */
     #desktop-container {
         display: grid;
-        width: calc(100vw / 1.37142857143);
+        /* width: calc(100vw / 1.37142857143); */
+        width: 560px;
     }
     /*
     ~~~~~~~~~~~~~~~~~~~~
     further-quick-info
     */
     #further-quick-info {
-        height: calc(100vw / 9.14285714286);
-        padding: calc(100vw / 38.4);
+        /* height: calc(100vw / 9.14285714286); */
+        /* padding: calc(100vw / 38.4); */
+        height: 84px;
+        padding: 20px;
         display: flex;
         justify-content: space-between;
         align-content: center;
@@ -97,33 +103,42 @@ TABLED & DESKTOP FIRST -->
         justify-content: space-evenly;
         justify-items: start;
         align-content: stretch;
-        height: calc(100vw / 17.4545454545);
-        margin-right: calc(100vw / 24);
+        /* height: calc(100vw / 17.4545454545); */
+        /* margin-right: calc(100vw / 24); */
+        height: 44px;
+        margin-right: 32px;
     } .info-box:not(:first-child) {
-        padding-left: calc(100vw / 48);
+        /* padding-left: calc(100vw / 48); */
+        padding-left: 16px;
         border-left: 1px solid #E6E6E6;
     }
     img.device-support {
-        width: calc(100vw / 50.7600793126);
+        /* width: calc(100vw / 50.7600793126); */
+        /* margin-right: calc(100vw / 91.5375446961); */
         height: auto;
-        margin-right: calc(100vw / 91.5375446961);
+        width: 15.13px;
+        margin-right: 8.39px;
     }
     .check-box {
-        margin-bottom: calc(100vw / 88.9918887601);
+        /* margin-bottom: calc(100vw / 88.9918887601); */
+        margin-bottom: 8.67px;
     } .check-box:last-child {
         margin-bottom: 0;
     }
     img.checkmark {
-        width: calc(100vw / 45.1499118166);
+        /* width: calc(100vw / 45.1499118166); */
+        /* margin: 0 calc(100vw / 80.6722689076) 0 0; */
         height: auto;
-        margin: 0 calc(100vw / 80.6722689076) 0 0;
+        width: 17.01px;
+        margin: 0 9.52px 0 0;
     }
     /*
     ~~~~~~~~~~~~~~~~~~~~
     promotion-CTA-box
     */
     #promotion-info-box {
-        padding: calc(100vw / 38.4);
+        /* padding: calc(100vw / 38.4); */
+        padding: 21.34px;
         background: #FFFFFF;
         box-shadow: inset 0px 1px 0px #ebebeb;
         display: flex;
@@ -148,57 +163,72 @@ TABLED & DESKTOP FIRST -->
         widget-container-style
         */
         #ad_widget_betarena {
-            width: calc(100vw / 1.81818181818);
-            height: calc(100vw / 7.34693877551);
+            max-width: 792px;
+            /* width: calc(100vw / 1.81818181818); */
+            max-height: 196px;
+            /* height: calc(100vw / 7.34693877551); */
         }
         #ad_widget_betarena img#booker-logo {
-            width: calc(100vw / 10.2857142857);
-            height: inherit;
+            /* width: calc(100vw / 10.2857142857);
+            height: inherit; */
             object-fit: cover;
+            width: 140px;
         }
         /* 
         ~~~~~~~~~~~~~~~~~~~~
         tabler-desktop-specific 
         */
         #desktop-container {
-            width: calc(100vw / 2.20858895706);
+            /* width: calc(100vw / 2.20858895706); */
+            width: 652px;
         }
         /*
         ~~~~~~~~~~~~~~~~~~~~
         further-quick-info
         */
         #further-quick-info {
-            height: calc(100vw / 17.1428571429);
-            padding: calc(100vw / 72);
+            /* height: calc(100vw / 17.1428571429); */
+            /* padding: calc(100vw / 72); */
+            height: 84px;
+            padding: 20px;
         }
         .info-box {
-            height: calc(100vw / 32.7272727273);
-            margin-right: calc(100vw / 45);
+            /* height: calc(100vw / 32.7272727273); */
+            /* margin-right: calc(100vw / 45); */
+            height: 44px;
+            margin-right: 32px;
         } .info-box:not(:first-child) {
-            padding-left: calc(100vw / 90);
+            /* padding-left: calc(100vw / 90); */
+            padding-left: 16px;
             border-left: 1px solid #E6E6E6;
         }
         img.device-support {
-            width: calc(100vw / 95.1751487112);
+            /* width: calc(100vw / 95.1751487112); */
+            /* margin-right: calc(100vw / 171.632896305); */
             height: auto;
-            margin-right: calc(100vw / 171.632896305);
+            width: 15.13px;
+            margin-right: 8.39px;
         }
         .check-box {
-            margin-bottom: calc(100vw / 166.666666667);
+            /* margin-bottom: calc(100vw / 166.666666667); */
+            margin-bottom: 8.64px;
         } .check-box:last-child {
             margin-bottom: 0;
         }
         img.checkmark {
-            width: calc(100vw / 84.6560846561);
+            /* width: calc(100vw / 84.6560846561); */
+            /* margin: 0 calc(100vw / 151.260504202) 0 0; */
             height: auto;
-            margin: 0 calc(100vw / 151.260504202) 0 0;
+            width: 17.01px;
+            margin-right: 9.52px;
         }
         /*
         ~~~~~~~~~~~~~~~~~~~~
         promotion-CTA-box
         */
         #promotion-info-box {
-            padding: calc(100vw / 72);
+            /* padding: calc(100vw / 72); */
+            padding: 21.35px;
         }
     }
 </style>
@@ -313,7 +343,7 @@ TABLED & DESKTOP FIRST -->
                 <!-- 
                 disclaimer-info-&-button -->
                 <div class='row'>
-                    <p class='small' style='margin-right: calc(100vw / 48); text-align: end;'>
+                    <p class='small' style='margin-right: 16px; text-align: end;'>
                         { data.lang.disclaimer }
                     </p>
                     <button class='btn-primary'>
