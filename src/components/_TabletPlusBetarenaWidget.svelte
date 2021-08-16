@@ -348,7 +348,7 @@ TABLED & DESKTOP FIRST -->
             <a href={ data.cta_link }>
                 <img 
                     src={data.logo}
-                    alt=""
+                    alt='Betting Site Logo'
                     id='booker-logo'
                 />
             </a>
