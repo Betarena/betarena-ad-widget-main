@@ -159,6 +159,7 @@ TABLED & DESKTOP FIRST -->
         object-fit: contain;
         background-color: var(--logo-bookmaker-bg);
         width: 140px;
+        height: 100%;
     }
     /* 
     ~~~~~~~~~~~~~~~~~~~~
@@ -344,11 +345,13 @@ TABLED & DESKTOP FIRST -->
         <div id='ad_widget_betarena'>
             <!--
             matchbetting-logo -->
-            <img 
-                src={data.logo}
-                alt=""
-                id='booker-logo'
-            />
+            <a href={ data.cta_link }>
+                <img 
+                    src={data.logo}
+                    alt=""
+                    id='booker-logo'
+                />
+            </a>
             <div id='desktop-container'>
                 <!-- 
                 further-info -->
@@ -358,11 +361,11 @@ TABLED & DESKTOP FIRST -->
                     <div class='row'>
                         <div class='info-box'>
                             <p class='large' style='color: var(--primary);'>{data.avg_payout} %</p>
-                            <p class='medium'>{data.lang.avg_payout}</p>
+                            <p class='small'>{data.lang.avg_payout}</p>
                         </div>
                         <div class='info-box'>
                             <p class='large' style='color: #68D77A'>{data.payout_speed}</p>
-                            <p class='medium'>{data.lang.payout_speed}</p>
+                            <p class='small'>{data.lang.payout_speed}</p>
                         </div>
                         {#if data.apps_support}
                             <div class='info-box'>
@@ -383,13 +386,13 @@ TABLED & DESKTOP FIRST -->
                                         class='device-support'
                                     />
                                 </div>
-                                <p class='medium'>{data.lang.apps_support}</p>
+                                <p class='small'>{data.lang.apps_support}</p>
                             </div>
                         {/if}
                     </div>
                     <!-- 
                     CTA-read-more -->
-                    <a href="/">
+                    <a href={ data.link_for_review }>
                         <p class='small' style='color: var(--primary); font-weight: 500;'>
                             { data.lang.read_full_review } >
                         </p>
@@ -442,13 +445,15 @@ TABLED & DESKTOP FIRST -->
                     disclaimer-info-&-button -->
                     <div class='row'>
                         <p class='small' style='margin-right: 16px; text-align: end;'>
-                            { data.lang.disclaimer }
+                            { data.disclamer }
                         </p>
-                        <button class='btn-primary'>
-                            <p class='medium' style='white-space: nowrap;'>
-                                Get 500$ bonus
-                            </p>
-                        </button>
+                        <a href={ data.cta_link }>
+                            <button class='btn-primary'>
+                                <p class='medium' style='white-space: nowrap;'>
+                                    { data.cta_link_text }
+                                </p>
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -216,6 +216,14 @@ TABLET (& UP),
 	}
 }
 
+.row-center {
+    display: flex;
+	flex-wrap: nowrap;
+	align-content: center;
+    justify-content: space-evenly;
+	align-items: center;
+}
+
 .column {
 	display: grid;
     align-content: center;
