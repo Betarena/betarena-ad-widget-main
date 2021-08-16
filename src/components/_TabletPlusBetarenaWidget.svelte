@@ -160,7 +160,7 @@
     <div id="ad_widget_betarena">
       <!--
             matchbetting-logo -->
-      <a href={data.cta_link}>
+      <a href={data.cta_link} target="_blank">
         <img src={data.logo} alt="Betting Site Logo" id="booker-logo" />
       </a>
       <div id="desktop-container">
@@ -269,7 +269,7 @@
             <p class="small" style="margin-right: 16px; text-align: end;">
               {data.disclamer}
             </p>
-            <a href={data.cta_link}>
+            <a href={data.cta_link} target="_blank">
               <button class="btn-primary">
                 <p class="medium" style="white-space: nowrap;">
                   {data.cta_link_text}
