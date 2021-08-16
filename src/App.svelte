@@ -52,10 +52,10 @@
 		top: 0;
 		bottom: 0;
 		margin: auto;
-		height: fit-content;
+		height: auto;
+		width: auto;
 		right: 0;
 		left: 0;
-		width: fit-content;
 	}
 </style>
 
