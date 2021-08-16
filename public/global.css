@@ -163,6 +163,9 @@ PRIMARY BTN */
 } .btn-primary p {
     color: var(--light) !important;
 }
+.btn-primary:hover {
+    background-color: rgba(247, 124, 66, 1) !important;
+}
 
 /* 
 ==========================
