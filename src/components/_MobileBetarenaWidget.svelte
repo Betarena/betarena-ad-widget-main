@@ -246,11 +246,13 @@ MOBILE FIRST -->
         <div id='ad_widget_betarena'>
             <!--
             matchbetting-logo -->
-            <img 
-                src={data.logo}
-                alt=""
-                id='booker-logo'
-            />
+            <a href={ data.cta_link }>
+                <img 
+                    src={data.logo}
+                    alt='Betting Site Logo'
+                    id='booker-logo'
+                />
+            </a>
             <div id='further-quick-info'>
                 <!-- 
                 further-analytics-info -->
@@ -288,7 +290,7 @@ MOBILE FIRST -->
                 </div>
                 <!-- 
                 validation-row-further-info -->
-                <div class='row'>
+                <div class='row-center'>
                     {#if data.cashout}
                         <div class='row'>
                             <img
@@ -325,14 +327,16 @@ MOBILE FIRST -->
             promotion-info-container -->
             <div id='promotion-info-box'>
                 <p class='small' style='margin-bottom: 12px;'>
-                    { data.lang.disclaimer }
+                    { data.disclamer }
                 </p>
-                <button class='btn-primary' style='margin-bottom: 20px;'>
-                    <p class='medium'>
-                        Get 500$ bonus
-                    </p>
-                </button>
-                <a href="/">
+                <a href={ data.cta_link }>
+                    <button class='btn-primary' style='margin-bottom: 20px; width: 100%;'>
+                        <p class='medium'>
+                            { data.cta_link_text }
+                        </p>
+                    </button>
+                </a>
+                <a href={ data.link_for_review }>
                     <p class='medium' style='color: var(--primary); font-weight: 500;'>
                         { data.lang.read_full_review } >
                     </p>
