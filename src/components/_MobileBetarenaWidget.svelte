@@ -199,7 +199,7 @@
         </div>
         <!-- 
                 validation-row-further-info -->
-        <div class="row-center">
+        <div class={(data.cashout && data.live_stream && data.bet_builder) === true ? 'row' : 'row-center'}>
           {#if data.cashout}
             <div class="row">
               <img
