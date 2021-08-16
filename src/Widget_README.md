@@ -2,7 +2,7 @@
 
 This widget consist of having a fully responsive and tailored to the design from Figma
 
-LIVE VIEW - `https://betarena-ad-widget.vercel.app/`
+LIVE VIEW - `betarena-ad-widget-main-jonsnowpt.vercel.app`
 
 ❗ - Some of the country codes are not in-line with the ones on the Firebase DB and will have to be manually adjsuted to fit inline with the country codes
 used by the `GeoJS` API - `https://dev.maxmind.com/geoip/legacy/codes`.
