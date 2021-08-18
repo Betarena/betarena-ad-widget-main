@@ -20,7 +20,7 @@ const firebaseConfig = {
   // 755147220298
 }
 
-console.info('firebase', firebase)
+// console.info('firebase', firebase)
 // Initialize the Firebase APP
 firebase.initializeApp(firebaseConfig)
 // Get a reference to the Google Authentication Service

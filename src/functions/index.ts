@@ -61,7 +61,7 @@ export function writeData() {
         }
         // write the data to the `real-db`;
         db_real.ref('ad_widget_home/' + lang[0]).set(data)
-        console.info('Data for' + `${lang}` + 'Written!')
+        // console.info('Data for' + `${lang}` + 'Written!')
     });
 
     let translationArr: Array < LanguageTranslation > = [{
@@ -111,7 +111,7 @@ export function writeData() {
     ];
     translationArr.forEach(element => {
         db_real.ref('ad_widget_home/translations/' + element.lang).set(element)
-        console.info('Translation for' + `${element.lang}` + 'Written!')
+        // console.info('Translation for' + `${element.lang}` + 'Written!')
     });
 }
 
@@ -127,7 +127,7 @@ export function writeData() {
 export async function getUserLanguageLocationDB(userGeoLocation: GeoJsResponse): Promise < LanguageParam > {
     // extract the user location data country code;
     let userCountryCode = userGeoLocation.country_code
-    console.info('userCountryCode', userCountryCode)
+    // console.info('userCountryCode', userCountryCode)
 
     return db_real.ref().child('ad_widget_home').child(userCountryCode.toLowerCase()).get().then((snapshot) => {
 
@@ -135,12 +135,12 @@ export async function getUserLanguageLocationDB(userGeoLocation: GeoJsResponse):
         if (!snapshot.exists()) {
             return db_real.ref().child('ad_widget_home').child('default').get().then((snapshot) => {
                 
-                console.info('getting-default-data from the REAL-DB', snapshot.val())
+                // console.info('getting-default-data from the REAL-DB', snapshot.val())
                 return snapshot.val()
             })
         } else if (snapshot.exists()) {
             // else, return the country code data;
-            console.info('data from Real DB', snapshot.val())
+            // console.info('data from Real DB', snapshot.val())
             return snapshot.val()
         } else {
             throw new Error('Network response was not ok');
@@ -165,7 +165,7 @@ export async function getUserTranslation(userLanguageLoc: LanguageParam): Promis
     // extract the user location language code;
     
     let userCountryLanguage = userLanguageLoc.lang
-    console.info('userCountryLanguage', userCountryLanguage)
+    // console.info('userCountryLanguage', userCountryLanguage)
 
     // decalre target DB location;
     let db_ref = db_real.ref().child('ad_widget_home').child('translations')
@@ -177,7 +177,7 @@ export async function getUserTranslation(userLanguageLoc: LanguageParam): Promis
             throw new Error('Network response was not ok');
         }
         // else, return the country code data;
-        console.info('data from Real DB', snapshot.val())
+        // console.info('data from Real DB', snapshot.val())
         return snapshot.val()
     })
 }
