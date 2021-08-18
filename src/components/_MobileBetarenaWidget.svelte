@@ -268,10 +268,10 @@ MOBILE FIRST -->
   #ad_widget_betarena {
     /* width: calc(100vw / 1.09329446064); */
     /* height: calc(100vw / 0.95663265306); */
-    width: 100%;
-    height: 100%;
-    max-width: 343px;
-    max-height: 392px;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 388px !important;
+    max-height: 392px !important;
     /* 
         constant-properties */
     display: grid;
