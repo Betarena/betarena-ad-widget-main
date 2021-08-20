@@ -18,6 +18,7 @@ import type {
     FinalLanguageResponse
 } from "../models/firebase-real-db-interface"; 
 
+import { data_latam } from '../data/data-latam-list'
 
 /**
  * A simple quick & easy function
@@ -129,23 +130,38 @@ export async function getUserLanguageLocationDB(userGeoLocation: GeoJsResponse):
     let userCountryCode = userGeoLocation.country_code
     // console.info('userCountryCode', userCountryCode)
 
-    return db_real.ref().child('ad_widget_home').child(userCountryCode.toLowerCase()).get().then((snapshot) => {
-
-        // if language code was not found, use the default;
-        if (!snapshot.exists()) {
-            return db_real.ref().child('ad_widget_home').child('default').get().then((snapshot) => {
-                
-                // console.info('getting-default-data from the REAL-DB', snapshot.val())
+    // check if the countryCode belongs to `data_latam` array list of values;
+    if (data_latam.includes(userCountryCode.toLowerCase())) {
+        return db_real.ref().child('ad_widget_home').child('default_latam').get().then((snapshot) => {
+            // check if the data exists (should exist at all times);
+            if (snapshot.exists()) {
+                // console.info('data from Real DB', snapshot.val())
                 return snapshot.val()
-            })
-        } else if (snapshot.exists()) {
-            // else, return the country code data;
-            // console.info('data from Real DB', snapshot.val())
-            return snapshot.val()
-        } else {
-            throw new Error('Network response was not ok');
-        }
-    })
+            } else {
+                throw new Error('Data from DB is incorrect');
+            }
+        })
+    }
+    // load the exising couuntry code OR fallback to the `default`;
+    else {
+        return db_real.ref().child('ad_widget_home').child(userCountryCode.toLowerCase()).get().then((snapshot) => {
+
+            // if language code was not found, use the default;
+            if (!snapshot.exists()) {
+                return db_real.ref().child('ad_widget_home').child('default').get().then((snapshot) => {
+                    
+                    // console.info('getting-default-data from the REAL-DB', snapshot.val())
+                    return snapshot.val()
+                })
+            } else if (snapshot.exists()) {
+                // else, return the country code data;
+                // console.info('data from Real DB', snapshot.val())
+                return snapshot.val()
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+    }
 }
 
 
