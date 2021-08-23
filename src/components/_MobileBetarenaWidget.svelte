@@ -157,7 +157,7 @@
     <div id="ad_widget_betarena">
       <!--
             matchbetting-logo -->
-      <a href={data.cta_link} target="_blank">
+      <a href={data.cta_link} target="_blank" rel="noreferrer">
         <img src={data.logo} alt="Betting Site Logo" id="booker-logo" />
       </a>
       <div id="further-quick-info">
@@ -199,7 +199,11 @@
         </div>
         <!-- 
                 validation-row-further-info -->
-        <div class={(data.cashout && data.live_stream && data.bet_builder) === true ? 'row' : 'row-center'}>
+        <div
+          class={(data.cashout && data.live_stream && data.bet_builder) === true
+            ? "row"
+            : "row-center"}
+        >
           {#if data.cashout}
             <div class="row">
               <img
@@ -238,7 +242,7 @@
         <p class="small" style="margin-bottom: 12px;">
           {data.disclamer}
         </p>
-        <a href={data.cta_link} target="_blank">
+        <a href={data.cta_link} target="_blank" rel="noreferrer">
           <button class="btn-primary" style="margin-bottom: 20px; width: 100%;">
             <p class="medium">
               {data.cta_link_text}
